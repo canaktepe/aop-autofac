@@ -1,5 +1,8 @@
-﻿using System.Reflection;
+﻿using System.Data.Entity.Infrastructure.Interception;
+using System.Reflection;
 using System.Runtime.InteropServices;
+using AOP.Aspects;
+using Autofac.Extras.DynamicProxy2;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information

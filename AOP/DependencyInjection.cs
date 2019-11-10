@@ -19,6 +19,8 @@ namespace AOP
             containerBuilder.Register(x => new DatabaseLogger()).As<ILoggerService>();
 
             containerBuilder.RegisterType<ProductService>().As<IProductService>().EnableInterfaceInterceptors();
+            containerBuilder.RegisterType<CustomerService>().As<ICustomerService>().EnableInterfaceInterceptors();
+
             containerBuilder.RegisterType<LogAspect>();
 
             return containerBuilder.Build();

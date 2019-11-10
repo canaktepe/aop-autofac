@@ -10,7 +10,9 @@ namespace AOP
         private static void Main(string[] args)
         {
             var container = DependencyInjection.Register();
+          
             var productService = container.Resolve<IProductService>();
+            var customerService = container.Resolve<ICustomerService>();
 
             var product = new Product
             {

@@ -73,6 +73,7 @@
   <ItemGroup>
     <Compile Include="Aspects\LogAspect.cs" />
     <Compile Include="Database\Context.cs" />
+    <Compile Include="Database\Entities\Customer.cs" />
     <Compile Include="Database\Entities\Log.cs" />
     <Compile Include="Database\Entities\Product.cs" />
     <Compile Include="Database\IEntity.cs" />
@@ -84,8 +85,10 @@
     <Compile Include="Logging\Log4Net\Logger\DatabaseLogger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Abstract\ICustomerService.cs" />
     <Compile Include="Services\Abstract\ILoggerService.cs" />
     <Compile Include="Services\Abstract\IProductService.cs" />
+    <Compile Include="Services\Concrete\CustomerService.cs" />
     <Compile Include="Services\Concrete\LoggerService.cs" />
     <Compile Include="Services\Concrete\ProductService.cs" />
   </ItemGroup>
