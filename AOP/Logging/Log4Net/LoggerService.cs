@@ -1,9 +1,10 @@
-﻿using AOP.Services.Abstract;
+﻿using System;
 using log4net;
 
-namespace AOP.Services.Concrete
+namespace AOP.Logging.Log4Net
 {
-    public class LoggerService : ILoggerService
+    [Serializable]
+    public class LoggerService
     {
         private readonly ILog _logger;
         protected LoggerService(ILog logger)

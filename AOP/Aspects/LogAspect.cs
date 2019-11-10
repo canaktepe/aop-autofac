@@ -2,16 +2,16 @@
 using System.Linq;
 using System.Transactions;
 using AOP.Logging;
-using AOP.Services.Abstract;
+using AOP.Logging.Log4Net;
 using Castle.DynamicProxy;
 
 namespace AOP.Aspects
 {
     public class LogAspect : IInterceptor
     {
-        private readonly ILoggerService _loggerService;
+        private readonly LoggerService _loggerService;
 
-        public LogAspect(ILoggerService loggerService)
+        public LogAspect(LoggerService loggerService)
         {
             _loggerService = loggerService;
         }
@@ -38,7 +38,8 @@ namespace AOP.Aspects
             {
                 try
                 {
-                    int a = Convert.ToInt32("a");
+                    //If you want to catch the error message, remove the comment line below.
+                    //int a = Convert.ToInt32("a");
                     _loggerService.Info(logDetail);
                     invocation.Proceed();
                     transaction.Complete();

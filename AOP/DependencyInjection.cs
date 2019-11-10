@@ -1,7 +1,7 @@
 ﻿using AOP.Aspects;
 using AOP.Database;
+using AOP.Logging.Log4Net;
 using AOP.Logging.Log4Net.Logger;
-using AOP.Services;
 using AOP.Services.Abstract;
 using AOP.Services.Concrete;
 using Autofac;
@@ -16,7 +16,7 @@ namespace AOP
             var containerBuilder = new ContainerBuilder();
 
             containerBuilder.RegisterType<Context>().AsSelf();
-            containerBuilder.Register(x => new DatabaseLogger()).As<ILoggerService>();
+            containerBuilder.Register(x => new DatabaseLogger()).As<LoggerService>();
 
             containerBuilder.RegisterType<ProductService>().As<IProductService>().EnableInterfaceInterceptors();
             containerBuilder.RegisterType<CustomerService>().As<ICustomerService>().EnableInterfaceInterceptors();
